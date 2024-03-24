@@ -16,7 +16,7 @@ const shirtSchema = new mongoose.Schema({
         required: true
     }
     
-});
+},{timestamps: true});
 
 const Shirts = mongoose.model('shirt',shirtSchema);
 
@@ -35,7 +35,7 @@ const pantSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},{timestamps:true});
 
 const Pant = mongoose.model('pant',pantSchema);
 
@@ -54,7 +54,7 @@ const shoeSchema = new mongoose.Schema({
         type:String,
         required: true
     }
-});
+},{timestamps:true});
 
 const Shoe = mongoose.model('shoe',shoeSchema);
 
