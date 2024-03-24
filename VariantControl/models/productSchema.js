@@ -24,7 +24,7 @@ const Shirts = mongoose.model('shirt',shirtSchema);
 //pantschema contains size,color,material
 const pantSchema = new mongoose.Schema({
     wristsize:{
-        type:String,
+        type:Number,
         required: true
     },
     pantcolor:{
@@ -43,7 +43,7 @@ const Pant = mongoose.model('pant',pantSchema);
 //Shoe Schem contains size , color and material
 const shoeSchema = new mongoose.Schema({
     shoesize:{
-        type: String,
+        type: Number,
         required: true
     },
     shoecolor:{
