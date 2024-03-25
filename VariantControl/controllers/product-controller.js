@@ -31,6 +31,12 @@ async function getShirtProductDetailsById(req,res){
         return res.json({error: "Id not found ! pls RE-check"});
     }
 }
+//all shirt products
+async function getShirtProducts(req,res){
+    const body = req.body;
+    const allshirtproducts = await Shirts.find({});
+    return res.json(allshirtproducts)
+}
 
 // Create a new product in pants
 async function handleTocCreatenwPantProduct(req,res){
@@ -57,6 +63,12 @@ async function getPantProductDetailsById(req,res){
         return res.json({error: "Id not found ! pls RE-check"});
     }
 }
+//all pant products
+async function getPantProducts(req,res){
+    const body = req.body;
+    const allPantproducts = await Pant.find({});
+    return res.json(allPantproducts)
+}
 
 // Create a new product in shoes
 async function handleTocCreateShoeProduct(req,res){
@@ -82,10 +94,17 @@ async function getShoeProductDetailsById(req,res){
         return res.json({error: "Id not found ! pls RE-check"});
     }
 }
+//all shoe products
+async function getShoeProducts(req,res){
+    const body = req.body;
+    const allshoeproducts = await Shoe.find({});
+    return res.json(allshoeproducts)
+}
 
 //all products fetched here
 async function getallproducts(req,res){
-    try { const allshirts = await Shirts.find({});
+    try { 
+    const allshirts = await Shirts.find({});
     const allpants = await Pant.find({});
     const allshoes = await Shoe.find({});
     return res.json(
@@ -106,5 +125,8 @@ module.exports = {
     getShirtProductDetailsById,
     getPantProductDetailsById,
     getShoeProductDetailsById,
-    getallproducts
+    getallproducts,
+    getShirtProducts,
+    getPantProducts,
+    getShoeProducts
 };
