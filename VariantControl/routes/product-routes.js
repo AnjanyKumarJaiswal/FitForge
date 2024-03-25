@@ -8,7 +8,10 @@ const {
     getShirtProductDetailsById,
     getPantProductDetailsById,
     getShoeProductDetailsById,
-    getallproducts
+    getallproducts,
+    getShirtProducts,
+    getShoeProducts,
+    getPantProducts
 } = require('../controllers/product-controller');
 
 const router = express.Router();
@@ -18,6 +21,13 @@ router
     .post('/shirts',handleToCreatenewShirtProduct)
     .post('/pants',handleTocCreatenwPantProduct)
     .post('/shoes',handleTocCreateShoeProduct);
+
+
+//each products details
+router
+    .get('/shirts',getShirtProducts)
+    .get('/shoes',getShoeProducts)
+    .get('pants',getPantProducts)
 
 //get product details by id
 router
